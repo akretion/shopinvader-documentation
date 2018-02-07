@@ -83,7 +83,25 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 
-html_theme = "sphinx_rtd_theme"
+html_theme = "alabaster"
+html_sidebars = {
+    '**': [
+        'about.html',
+        'searchbox.html',
+        'navigation.html',
+        'relations.html',
+        'donate.html',
+    ]
+}
+html_theme_options = {
+
+    'sidebar_includehidden': False,
+    'fixed_sidebar': True,
+    'page_width': '1200px',
+    'sidebar_width': '320px',
+    'analytics_id': 'UA-72717357-6',
+    'sidebar_collapse': True
+}
 
 
 
@@ -98,17 +116,6 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# Custom sidebar templates, must be a dictionary that maps document names
-# to template names.
-#
-# This is required for the alabaster theme
-# refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-html_sidebars = {
-    '**': [
-        'relations.html',  # needs 'show_related': True theme option to display
-        'searchbox.html',
-    ]
-}
 
 
 # -- Options for HTMLHelp output ------------------------------------------

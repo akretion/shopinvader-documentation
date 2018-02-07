@@ -1,0 +1,273 @@
+{% extends "!layout.html" %}
+  {% block header %} {{ super() }}
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+    /*Body*/
+    body {
+      background-color: #00afca1a;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+    }
+    a {
+      color: #0894AA;
+    }
+    a.reference {
+
+      border-bottom: 1px solid  #0894AA;
+    }
+    .caption-text {
+      color: #A7A7A7;
+    }
+    tt, code {
+      background-color: #F0EDED;
+      color: #4f4f50;
+      padding:3px 4px;
+
+      font-weight: bold;
+    }
+    div.body p, div.body dd, div.body li {
+      line-height: 1.5rem;
+    }
+    .documentwrapper {
+      border-top: 6px solid  #00afcaff;
+      min-height: calc(100vh - 100px);
+    }
+    div.document {
+      margin-top: 0;
+      box-shadow: 0px 0px 19px #D7D7D7;
+      padding-bottom: 30px;
+      background-color: #fff;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: 'Open Sans', sans-serif !important;
+      font-weight: 300;
+    }
+    div.sphinxsidebar a {
+      border-bottom: none;
+      line-height: 1.1rem;
+
+    }
+
+    .sphinxsidebar {
+      border-right: 1px solid #EFEFEF;
+      background-color: #FBFBFB;
+      height: 100vh;
+      overflow: auto;
+    }
+    div.sphinxsidebar h3{
+      font-weight: 300;
+      border-bottom: #00afcaff;
+    }
+    ul {
+      list-style: none;
+
+    }
+    ul.simple {
+      list-style: disc;
+
+    }
+    div.sphinxsidebar ul ul {
+      list-style: none;
+      margin: 0;
+    }
+    div.sphinxsidebarwrapper > ul {
+      margin-left: 15px;
+      overflow: auto;
+    }
+    .sphinxsidebarwrapper > ul  > li.toctree-l1 > a,
+    .toctree-wrapper li.toctree-l1{
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1rem;
+      line-height: 2.5rem;
+
+      width: 100%;
+    }
+    .toctree-wrapper li.toctree-l1::before {
+      content:"";
+      font-family: FontAwesome;
+      padding-right: 10px;
+      color: #7b7c7e;
+    }
+    .sphinxsidebarwrapper > ul  > li.toctree-l1 > a {
+      display: inline-block;
+      width: 100%;
+      border-bottom: 1px solid #EFEFEF;
+    }
+    .sphinxsidebarwrapper > ul.current  > li.toctree-l1 > a::after {
+      content:"";
+      font-family: FontAwesome;
+      padding-right: 10px;
+      color: #7b7c7e;
+      position: absolute;
+      right: 20px;
+
+    }
+    .sphinxsidebarwrapper > ul.current  > li.toctree-l1.current > a{
+      color: #00afcaff;
+    }
+    .sphinxsidebarwrapper > ul.current  > li.toctree-l1.current > a::after {
+      content:"";
+      font-family: FontAwesome;
+      padding-right: 10px;
+      color: #00afcaff;
+    }
+
+    .sphinxsidebarwrapper  li.toctree-l2 a,
+    .toctree-wrapper li.toctree-l2 {
+      text-transform: uppercase;
+
+      font-weight: normal;
+      line-height: 2.0rem;
+      font-size: 0.9rem;
+      list-style: none;
+      margin-left: 10px;
+    }
+    .sphinxsidebarwrapper  li.toctree-l3 a,
+    .toctree-wrapper li.toctree-l3{
+      font-size: 0.9rem;
+      line-height: 1.8rem;
+      text-transform: none;
+      margin-left: 20px;
+    }
+    .sphinxsidebarwrapper  li.toctree-l4 a,
+    .toctree-wrapper li.toctree-l4{
+      font-size: 0.8rem;
+      font-weight: 300;
+      margin-left: 30px;
+    }
+    .sphinxsidebarwrapper  li.toctree-l5,
+    .toctree-wrapper li.toctree-l5{
+      display: none;
+    }
+    div.sphinxsidebar a.reference {
+      color: #5c5d60;
+      border:0;
+    }
+    .toctree-wrapper {
+      padding-bottom: 20px;
+    }
+    .toctree-wrapper a.reference {
+      color: #444;
+      border:0;
+    }
+    .toctree-wrapper ul {
+      margin: 0;
+      margin-left: 10px;
+    }
+
+    div.body h1 {
+      border-bottom: 1px solid #00afcaff;
+      font-size: 3rem;
+      font-weight: 300;
+      color: #00afcaff;
+      padding-top: 40px;
+    }
+    div.body h2 {
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
+    div.body h3 {
+      font-size: 1.7rem;
+      font-weight: 300;
+      color:#676a6c;
+    }
+
+    table.docutils,
+    table.docutils td,
+    table.docutils th {
+      border: none;
+      padding-bottom:7px;
+      padding-top:7px;
+    }
+    table.docutils th {
+      background-color: #00afcaff;
+      color: #fff;
+    }
+    table.docutils tr.row-odd {
+      background-color :#F8F8F8;
+
+    }
+    div.sphinxsidebarwrapper h1.logo {
+      text-align:center;
+
+    }
+    div.sphinxsidebarwrapper h1.logo a {
+      font-size: 2.8rem;
+      line-height: 5rem;
+      color: #0894AA !important;
+    }
+    div.note {
+      background-color: #3bd9f21a;
+      border: 0;
+      border-left: 4px solid #00afca4d;
+      color: #057E92;
+    }
+    div.admonition {
+      padding: 15px;
+      padding-top: 10px;
+    }
+    div.admonition p.admonition-title {
+      font-family: 'Open Sans', sans-serif !important;
+      font-size: 1.5rem;
+
+    }
+    .admonition.note p.admonition-title::before {
+      content: '';
+      font-family: FontAwesome;
+      padding-right: 10px;
+    }
+    p.admonition-title::after {
+      content: ' ';
+    }
+    dl.docutils dt {
+      font-weight: bold;
+      margin-top:30px;
+    }
+    blockquote div.highlight pre, pre{
+        background-color: #F6F6F6;
+        box-shadow: 2px 2px 4px #EEE;
+    }
+
+    div.footer {
+      border-top: 6px solid #00afcaff;
+      background-color: #494a4d;
+      color: #FFF;
+      margin-top: 0;
+      padding-top: 20px;
+      margin-bottom: 0;
+      padding-bottom: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+      box-shadow: 10px 0px 19px #EEE
+
+    }
+    div.footer a {
+      color: #4FD3E7;
+      text-decoration: none;
+      border:0;
+    }
+    div.sphinxsidebar #searchbox {
+      padding-bottom: 30px;
+    }
+    div.sphinxsidebar #searchbox input[type="text"] {
+      font-family: 'Open Sans', sans-serif !important;
+      width: 100%;
+      height: 26px;
+    }
+    div.sphinxsidebar #searchbox input[type="submit"] {
+      font-family: 'Open Sans', sans-serif !important;
+      background: #0894AA;
+      color: #fff;
+      height: 30px;
+      border-color:#0894AA;
+      margin-left:10px;
+    }
+
+    div.sphinxsidebar form > div {
+      display: inline-block;
+    }
+  </style>
+{% endblock %}
