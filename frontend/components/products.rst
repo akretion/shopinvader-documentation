@@ -33,7 +33,7 @@ The ``product`` object has the following attributes:
 
   "attributes", "Array", "Collection of variant attribute"
   "categories", "Array", "Collection of parents categories"
-  "cross_sellings", "Array", "Collection of product ObjectID for cross selling ex: [{id:60}, {id: 78}]."
+  
   "default_code", "string", "Odoo product Internal Reference"
   "description", "String", "Product HTML description"
   "hierarchicalCategories", "Array", "Parent categories list for faceting ex: {lvl0:..., lvl1:...}"
@@ -43,29 +43,29 @@ The ``product`` object has the following attributes:
   "medias", "Array", "List of URL for products documentations files"
   "meta_description", "String", "meta description tag value."
   "meta_keywords", "String", "meta keyword tag value."
-  "model_name", "String", "Product template name"
+  "model", "String", "Product template object (with name attribute)"
   "objectID", "Integer", "Product's ID"
   "price", "Array", "Price. *See price documentation below*"
   "qty_available", "Integer", "Stock quantity saleable"
   "redirect_url_key", "Array", "List URL redirection (HTTP status 301)"
   "rating", "Array", "Rating, *See rating documentation*"
-  "relateds", "Array", "Product relateds"
+  "relateds.cross_sell", "Array", "Collection of product ObjectID for cross selling ex: [{id:60}, {id: 78}]."
+	"relateds.up_sell", "Array", "Array", "Collection of product ObjectID for up selling ex: [{id:60}, {id: 78}]."
   "seo_title", "String", "Product page Title , title tag value"
   "stock_state", "String", "product stock status"
   "tags", "Array", "Product tag specification"
-  "up_sellings", "Array", "Collection of product ObjectID for up selling ex: [{id:60}, {id: 78}]."
   "url_key", "String", "product relative URL"
   "variant_count", "Integer", "number of variant"
-
+	"variants", "Array", " Provide product object of all variants available. The use of this variable make an API call to Algolia"
 
 
 Example :
-  Display product name list.
+  Display product model name.
 
   .. code-block:: liquid
 
     {% for product in store.products %}
-      {{product.model_name}}
+      {{product.model.name}}
     {% endfor %}
 
 .. _products_image:
@@ -76,7 +76,8 @@ Images
 
 Shopinvader Odoo module generate images with 4 differents sizes (small, medium, large, original).
 Image attribute of product's data is an array containing all product's images URL with 4 sizes.
-Original size is the size of image provided by the user in Odoo.
+Original size is the size of image provided by the user in Odoo. Image object has ``src`` and 
+``alt`` attibutes to get URL and alternate text for an image.
 
 Example :
   Display medium size image product.
@@ -85,7 +86,7 @@ Example :
   .. code-block:: liquid
 
     {% for image in product %}
-      <img src={{image.medium}} />
+      <img src={{image.medium.src}} alt="{{image.medium.alt}}"/>
     {% endfor %}
 
 
@@ -97,7 +98,7 @@ Price
 
 Price is an attribute of product objet. Price attribute contains some product
 price list. Shopinvader  use the Locomotive CMS parameter
-site.metafields.erp.default_price value to get the default pricelist.
+``site.metafields.erp.default_price`` value to get the default pricelist.
 
 Price product's attribute contains automatically the value of the current pricelist.
 
