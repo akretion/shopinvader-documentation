@@ -33,7 +33,7 @@ The ``product`` object has the following attributes:
 
   "attributes", "Array", "Collection of variant attribute"
   "categories", "Array", "Collection of parents categories"
-  
+
   "default_code", "string", "Odoo product Internal Reference"
   "description", "String", "Product HTML description"
   "hierarchicalCategories", "Array", "Parent categories list for faceting ex: {lvl0:..., lvl1:...}"
@@ -41,31 +41,33 @@ The ``product`` object has the following attributes:
   "images", "Array", "Collection of URL images, 4 image sizes are available for earch item (small, large, medium, original)"
   "main", "Boolean", "Main variant"
   "medias", "Array", "List of URL for products documentations files"
-  "meta_description", "String", "meta description tag value."
-  "meta_keywords", "String", "meta keyword tag value."
+  "meta_description", "String", "Meta description tag value."
+  "meta_keywords", "String", "Meta keyword tag value."
   "model", "String", "Product template object (with name attribute)"
+  "name", "String", "Product name with model name and variant name"
   "objectID", "Integer", "Product's ID"
   "price", "Array", "Price. *See price documentation below*"
   "qty_available", "Integer", "Stock quantity saleable"
   "redirect_url_key", "Array", "List URL redirection (HTTP status 301)"
   "rating", "Array", "Rating, *See rating documentation*"
   "relateds.cross_sell", "Array", "Collection of product ObjectID for cross selling ex: [{id:60}, {id: 78}]."
-	"relateds.up_sell", "Array", "Array", "Collection of product ObjectID for up selling ex: [{id:60}, {id: 78}]."
+	"relateds.up_sell", "Array", "Collection of product ObjectID for up selling ex: [{id:60}, {id: 78}]."
   "seo_title", "String", "Product page Title , title tag value"
-  "stock_state", "String", "product stock status"
+  "short_name", "String", "Variant name"
+  "stock_state", "String", "Product stock status"
   "tags", "Array", "Product tag specification"
-  "url_key", "String", "product relative URL"
-  "variant_count", "Integer", "number of variant"
-	"variants", "Array", " Provide product object of all variants available. The use of this variable make an API call to Algolia"
+  "url_key", "String", "Product relative URL"
+  "variant_count", "Integer", "Number of variant"
+	"variants", "Array", "Provide product object of all variants available. The use of this variable make an API call to Algolia"
 
 
 Example :
-  Display product model name.
+  Display product model name and variant name.
 
   .. code-block:: liquid
 
     {% for product in store.products %}
-      {{product.model.name}}
+      <b>{{product.model.name}}</b> - {{product.short_name}}
     {% endfor %}
 
 .. _products_image:
@@ -75,9 +77,46 @@ Images
 ------
 
 Shopinvader Odoo module generate images with 4 differents sizes (small, medium, large, original).
-Image attribute of product's data is an array containing all product's images URL with 4 sizes.
-Original size is the size of image provided by the user in Odoo. Image object has ``src`` and 
-``alt`` attibutes to get URL and alternate text for an image.
+
+Image attribute of product's data is a product's images collection. Each image has 4 sizes.
+Original size is the size of image provided by the user in Odoo.
+
+The ``image`` object has the following attributes:
+
+.. csv-table:: product.images attributes
+  :header: "Name", "Type", "Desciption"
+  :widths: 15, 15, 70
+
+  "src", "String", "Image URL"
+  "alt", "String", "Alternate name"
+
+
+*Cart line json*
+
+  .. code-block:: json
+
+      {
+      "images": [
+          {
+            "small": {
+              "src": "https://..../image/product.product/44/image/60x60",
+              "alt": "Product....bottom view "
+            },
+            "large": {
+              "src": "https://..../image/product.product/44/image/500x500",
+              "alt": "Product....top view"
+            },
+            "medium": {
+              "src": "https://..../image/product.product/44/image/300x300",
+              "alt": "Product....left view"
+            },
+            "original": {
+              "src": "https://..../image/product.product/44/image",
+              "alt": "Product....side view"
+            }
+          }
+        ]
+      }
 
 Example :
   Display medium size image product.

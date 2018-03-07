@@ -24,34 +24,69 @@ Cart header
   :header: "Name", "Type", "Desciption"
   :widths: 15, 15, 70
 
-  "anonymous_token",	"String", "*Deprecated* Token for anonymous customer"
-  "anonymous_email",	"String", "*Deprecated* Email anonymous customer"
-  "amount_tax",	"Float", "VAT grand total (Item and shipping cost included)"
-  "amount_total",	"Float", "Grand total"
-  "amount_untaxed",	"Float", "Total without taxes"
-  "available_carriers", "Array", "Collection of carrier *See carrier documentation below*"
-  "available_payment_method", "Array", "Collection of payment method, see :ref:`cart_payment_method` doc"
-  "carrier", "Object", "Carrier selected"
-  "current_step", "String", "Cart Step, see :ref:`cart_checkout` doc"
-  "date_order", "Date", "The creation cart date"
-  "done_steps", "Array", "The list of step previously done  see :ref:`cart_lines` documentation"
+
+  "amount", "Date", "Grand total and taxes, See :ref:`cart_amount` documentation"
+  "date", "Date", "The cart creation date"
+  "lines", "Array", "Cart lines See :ref:`cart_lines` documentation"
   "id", "Integer", "Cart ID"
-  "item_amount_tax", "Float", "VAT amout of Item subtotal (sum of product's VAT)"
-  "item_amount_total", "Float", "Product subtotal  (sum of product's total without shippment)"
-  "item_amount_untaxed", "Float", "Product subtotal without VAT"
-  "item_number", "Integer", "Sum of all product's quantities"
+  "invoicing", "Object", "Invoice address, see :ref:`cart_invoicing` doc"
   "name", "String", "Cart reference"
-  "order_line", "Array", "Cart lines See :ref:`cart_lines` documentation"
-  "partner", "Object", "Cart's customer"
-  "partner_invoice", "Object", "Invoice address, see :ref:`cart_address` doc"
-  "partner_shipping", "Object", "Shipping address, see :ref:`cart_address` doc"
-  "payment_method",  "Object", "Payment method selected, see :ref:`cart_payment_method` doc"
+  "payment",  "Object", "Payment method selected, see :ref:`cart_payment_method` doc"
+  "shipping", "Object", "Shipping address, see :ref:`cart_shipping` doc"
   "state",  "String", "Odoo sale order status"
-  "shipping_amount_tax",  "Float", "Shipping VAT amout"
-  "shipping_amount_untaxed",  "Float", "Shipping cost without VAT"
-  "shipping_amount_total",  "Float", "Shipping cost with VAT included"
+  "step", "String", "Cart Step list, see :ref:`cart_checkout` doc"
+
+.. _cart_amount:
+
+Amout
+------
+
+Amout object provide cart Grand total and taxes amount
+
+.. csv-table:: store.cart.amount
+  :header: "Name", "Type", "Desciption"
+  :widths: 15, 15, 70
+
+  "tax",	"Float", "VAT grand total (Item and shipping cost included)"
+  "total",	"Float", "Grand total (included taxes)"
+  "untaxed",	"Float", "Total amount without taxes"
+
+.. _cart_shipping:
+
+Shipping
+---------
+
+Shipping object provide shipping customer address, selected carrier and shipping
+cost.
+
+
+.. csv-table:: store.cart amount
+  :header: "Name", "Type", "Desciption"
+  :widths: 15, 15, 70
+
+  "address",	"Object", "Shipping address"
+  "amount.tax",	"Float", "Shipping cost's tax"
+  "amount.total",	"Float", "Shipping cost taxes included"
+  "amount.untaxed",	"Float", "Shipping cost without taxes"
+  "carrier", "Float", "Total amount included taxes"
   "trackings", "Array", "Parcel tracking URLs, not available for cart."
-  "use_different_invoice_address", "Boolean", "Set True if shipping and invoice address are not the same"
+
+
+.. _cart_invoicing:
+
+Invoicing
+----------
+
+Shipping object provide invoicing customer address.
+
+
+.. csv-table:: store.cart amount
+  :header: "Name", "Type", "Desciption"
+  :widths: 15, 15, 70
+
+  "address",	"Object", "invoicing address"
+
+
 
 
 Actions
@@ -68,7 +103,7 @@ You have to use get or post for form method. All actions require
 use for redirection in case of success or error.
 
 The action form attribute is use to specify a Shopinvader controller (
-invader/cart/update, invader/cart/add_item...)
+/invader/cart/update, /invader/cart/add_item...)
 
 
 .. note::
@@ -105,13 +140,13 @@ You have to set up your cart steps into odoo backend configuration.
   "current_step", "String", "current step ID"
   "next_step", "String", "next step ID"
 
-form submitting on invader/cart/update may be combined various actions like
-shipping address, shipping method in the same time.
+form submitting on /invader/cart/update may be combined various actions like
+select shipping address, define shipping method in the same time.
 
 HTML form to go to the next step
   .. code-block:: html
 
-    <form method="post" action="invader/cart/update">
+    <form method="post" action="/invader/cart/update">
       <input type="hidden" name="invader_success_url" value="<URL success page>" />
       <input type="hidden" name="invader_error_url" value="<URL error page>" />
       <input type="hidden" name="current_step" value="cart_index">
@@ -133,11 +168,9 @@ address.
 shipping and billing address are an item of ``store.addresses``. ``store.addresses``
 collection (:ref:`see store.addresses documentation <addresses>`).
 
-Set true to ``use_different_invoice_address`` parameter for different billing
-and shipping addresses.
 
 
-*Controller* invader/cart/update
+*Controller* /invader/cart/update
 
 .. csv-table:: HTML form input
   :header: "Input name", "Type", "Desciption"
@@ -151,10 +184,9 @@ and shipping addresses.
 HTML form to choose shipping
   .. code-block:: html
 
-    <form method="post" action="invader/cart/update">
+    <form method="post" action="/invader/cart/update">
       <input type="hidden" name="invader_success_url" value="<URL success page>" />
       <input type="hidden" name="invader_error_url" value="<URL error page>" />
-      <input type="hidden" name="use_different_invoice_address" value="true" />
       <div>
         <h2>Select shipping address</h2>
         {% with_scope  address_type: "address" %}
@@ -187,7 +219,7 @@ HTML form to choose shipping
 Select shipping method
 ------------------------
 
-*Controller* invader/cart/update
+*Controller* /invader/cart/update
 
 .. csv-table:: HTML form input
   :header: "Input name", "Type", "Desciption"
@@ -204,7 +236,7 @@ Select shipping method
 HTML form to go to the next step
   .. code-block:: html
 
-    <form method="post" action="invader/cart/update">
+    <form method="post" action="/invader/cart/update">
       <input type="hidden" name="invader_success_url" value="<URL success page>" />
       <input type="hidden" name="invader_error_url" value="<URL error page>" />
 
@@ -225,14 +257,14 @@ HTML form to go to the next step
 Select payment method
 ------------------------
 
-*Controller* invader/cart/update
+*Controller* /invader/cart/update
 
 ``store.cart.available_payment_method`` provide carrier list.
 
 HTML form to go to the next step
   .. code-block:: html
 
-    <form method="post" action="invader/cart/update">
+    <form method="post" action="/invader/cart/update">
       <input type="hidden" name="invader_success_url" value="<URL success page>" />
       <input type="hidden" name="invader_error_url" value="<URL error page>" />
 
@@ -251,16 +283,16 @@ HTML form to go to the next step
 .. _cart_lines:
 
 ==========
-Cart item
+Cart lines
 ==========
 
 
 Attributes
 ===========
 
-An order_line represents a single line in the shopping cart.
-This object can be accessed in all Liquid templates via ``store.cart.order_line``.
-There is one cart line for each product variant in the shopping cart.
+A line represents a single line in the shopping cart.
+This object can be accessed in all Liquid templates via ``store.cart.lines.items``.
+There is one cart line for each product variant added to the shopping cart.
 
 Cart and cart lines are stored directly in odoo.
 
@@ -270,14 +302,43 @@ This object has the following attributes:
   :header: "Name", "Type", "Desciption"
   :widths: 15, 15, 70
 
-  "discount", "Float", "Discount rate"
-  "id", "Integer", "cart line ID (used for update and delete lines)"
-  "is_delivery", "Boolean", "product already delivered. not for cart"
-  "product", "Object", "Product object with id, image, url key, *see exemple below*"
-  "product_uom_qty", "Integer", "Product quantity"
-  "price_unit", "Float", "Unit product price (without discount)"
-  "price_subtotal", "Float", "total of cart line without taxes"
-  "price_subtotal_gross", "Float", "total of cart line taxes included"
+  "count", "Integer", "Number of items in cart"
+  "amount", "Object", "subtotal of all products added to cart"
+  "items", "Object", "Collection of lines "
+
+
+
+.. cart_lines_amount:
+
+  Amount
+  ------
+
+  Amout object provide cart Grand total and taxes amount of all product in cart
+
+  .. csv-table:: store.cart.amount
+    :header: "Name", "Type", "Desciption"
+    :widths: 15, 15, 70
+
+    "tax",	"Float", "VAT grand total (Item and shipping cost included)"
+    "total",	"Float", "Total amount  of products (included taxes)"
+    "untaxed",	"Float", "Total amount of products without taxes"
+
+
+
+.. cart_lines_items:
+
+  Items
+  ------
+
+  Collection of cart line, provide all products added to cart.
+
+  .. csv-table:: store.cart.amount
+    :header: "Name", "Type", "Desciption"
+    :widths: 15, 15, 70
+
+    "amount",	"Object", "cart line amount"
+    "product",	"Object", "product object (lite version only with sku, name, short_name, images, model, url_key)"
+    "discount",	"Object", "Discount object (rate, value...)"
 
 
 *Cart line json*
@@ -328,7 +389,7 @@ Actions
 Add product to cart
 -------------------
 
-*Controller* invader/cart/add_item
+*Controller* /invader/cart/add_item
 
 .. csv-table:: HTML form input
   :header: "Input name", "Value", "Desciption"
@@ -343,7 +404,7 @@ Add product to cart
 HTML form to add product in cart
   .. code-block:: html
 
-    <form method="POST" action="invader/cart/add_item">
+    <form method="POST" action="/invader/cart/add_item">
       <input type="hidden" name="invader_success_url" value="<URL success page>" />
       <input type="hidden" name="invader_error_url" value="<URL error page>" />
       <input type="hidden" name="product_id" value="<product.ObjectID>" />
@@ -357,7 +418,7 @@ Update quantity
 -------------------
 This action is usally used in cart item list.
 
-*Controller* invader/cart/update_item
+*Controller* /invader/cart/update_item
 
 .. csv-table:: HTML form input
   :header: "Input name", "Value", "Desciption"
@@ -372,7 +433,7 @@ This action is usally used in cart item list.
 HTML form to change product quantity
   .. code-block:: html
 
-    <form method="POST" action="invader/cart/update_item">
+    <form method="POST" action="/invader/cart/update_item">
       <input type="hidden" name="invader_success_url" value="<URL success page>" />
       <input type="hidden" name="invader_error_url" value="<URL error page>" />
       <input type="hidden" name="item_id" value="<Cart line ID>" />
@@ -397,7 +458,7 @@ Remove product to cart
 HTML form to remove cart line
   .. code-block:: html
 
-    <form method="POST" action="invader/cart/delete_item">
+    <form method="POST" action="/invader/cart/delete_item">
       <input type="hidden" name="invader_success_url" value="<URL success page>" />
       <input type="hidden" name="invader_error_url" value="<URL error page>" />
       <input type="hidden" name="item_id" value="<Cart line ID>" />
