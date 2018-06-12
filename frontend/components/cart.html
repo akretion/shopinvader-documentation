@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cart &#8212; ShopInvader 1 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Categories" href="categories.html" />
+    <link rel="prev" title="Addresses" href="addresses.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body> 
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+    /*Body*/
+    body {
+      background-color: #fff;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+    }
+    a {
+      color: #00c4e0ff;
+    }
+    a.reference {
+
+      border-bottom: 1px solid  #00c4e0;
+    }
+    .caption-text {
+      color: #A7A7A7;
+    }
+    tt, code {
+      background-color: #F0EDED;
+      color: #4f4f50;
+      padding:3px 4px;
+
+      font-weight: bold;
+    }
+    div.body p, div.body dd, div.body li {
+      line-height: 1.5rem;
+    }
+    .documentwrapper {
+      border-top: 6px solid  #00c4e0ff;
+      min-height: calc(100vh - 100px);
+    }
+    div.document {
+      margin-top: 0;
+      box-shadow: 0px 0px 19px #D7D7D7;
+      padding-bottom: 30px;
+      background-color: #fff;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: 'Open Sans', sans-serif !important;
+      font-weight: 300;
+    }
+    div.sphinxsidebar a {
+      border-bottom: none;
+      line-height: 1.1rem;
+
+    }
+
+    .sphinxsidebar {
+      border-right: 1px solid #EFEFEF;
+      background-color: #FBFBFB;
+      height: 100vh;
+      overflow: auto;
+    }
+    div.sphinxsidebar h3{
+      font-weight: 300;
+      border-bottom: #00c4e0ff;
+    }
+    ul {
+      list-style: none;
+
+    }
+    ul.simple {
+      list-style: disc;
+
+    }
+    div.sphinxsidebar ul ul {
+      list-style: none;
+      margin: 0;
+    }
+    div.sphinxsidebarwrapper > ul {
+      margin-left: 15px;
+      overflow: auto;
+    }
+    .sphinxsidebarwrapper > ul  > li.toctree-l1 > a,
+    .toctree-wrapper li.toctree-l1{
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1rem;
+      line-height: 2.5rem;
+
+      width: 100%;
+    }
+    .toctree-wrapper li.toctree-l1::before {
+      content:"";
+      font-family: FontAwesome;
+      padding-right: 10px;
+      color: #7b7c7e;
+    }
+    .sphinxsidebarwrapper > ul  > li.toctree-l1 > a {
+      display: inline-block;
+      width: 100%;
+      border-bottom: 1px solid #EFEFEF;
+    }
+    .sphinxsidebarwrapper > ul.current  > li.toctree-l1 > a::after {
+      content:"";
+      font-family: FontAwesome;
+      padding-right: 10px;
+      color: #7b7c7e;
+      position: absolute;
+      right: 20px;
+
+    }
+    .sphinxsidebarwrapper > ul.current  > li.toctree-l1.current > a{
+      color: #00c4e0ff;
+    }
+    .sphinxsidebarwrapper > ul.current  > li.toctree-l1.current > a::after {
+      content:"";
+      font-family: FontAwesome;
+      padding-right: 10px;
+      color: #00c4e0ff;
+    }
+
+    .sphinxsidebarwrapper  li.toctree-l2 a,
+    .toctree-wrapper li.toctree-l2 {
+      text-transform: uppercase;
+
+      font-weight: normal;
+      line-height: 2.0rem;
+      font-size: 0.9rem;
+      list-style: none;
+      margin-left: 10px;
+    }
+    .sphinxsidebarwrapper  li.toctree-l3 a,
+    .toctree-wrapper li.toctree-l3{
+      font-size: 0.9rem;
+      line-height: 1.8rem;
+      text-transform: none;
+      margin-left: 20px;
+    }
+    .sphinxsidebarwrapper  li.toctree-l4 a,
+    .toctree-wrapper li.toctree-l4{
+      font-size: 0.8rem;
+      font-weight: 300;
+      margin-left: 30px;
+    }
+    .sphinxsidebarwrapper  li.toctree-l5,
+    .toctree-wrapper li.toctree-l5{
+      display: none;
+    }
+    div.sphinxsidebar a.reference {
+      color: #5c5d60;
+      border:0;
+    }
+    .toctree-wrapper {
+      padding-bottom: 20px;
+    }
+    .toctree-wrapper a.reference {
+      color: #444;
+      border:0;
+    }
+    .toctree-wrapper ul {
+      margin: 0;
+      margin-left: 10px;
+    }
+
+    div.body h1 {
+      border-bottom: 1px solid #003b57;
+      font-size: 3rem;
+      font-weight: 300;
+      color: #003b57;
+      padding-top: 40px;
+      text-transform: uppercase;
+    }
+    div.body h2 {
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
+    div.body h3 {
+      font-size: 1.7rem;
+      font-weight: 300;
+      color:#676a6c;
+    }
+
+    table.docutils,
+    table.docutils td,
+    table.docutils th {
+      border: none;
+      padding-bottom:7px;
+      padding-top:7px;
+    }
+    table.docutils th {
+      background-color: #00c4e0ff;
+      color: #fff;
+    }
+    table.docutils tr.row-odd {
+      background-color :#F8F8F8;
+
+    }
+    div.sphinxsidebarwrapper h1.logo {
+      text-align:center;
+      padding-bottom:1rem;
+      padding-top:1rem;
+    }
+    div.sphinxsidebarwrapper h1.logo a {
+      font-size: 2.8rem;
+      line-height: 5rem;
+      color: #00c4e0 !important;
+
+    }
+    div.note {
+      background-color: #3bd9f21a;
+      border: 0;
+      border-left: 4px solid #00c4e04d;
+      color: #057E92;
+    }
+    div.admonition {
+      padding: 15px;
+      padding-top: 10px;
+    }
+    div.admonition p.admonition-title {
+      font-family: 'Open Sans', sans-serif !important;
+      font-size: 1.5rem;
+
+    }
+    .admonition.note p.admonition-title::before {
+      content: '';
+      font-family: FontAwesome;
+      padding-right: 10px;
+    }
+    p.admonition-title::after {
+      content: ' ';
+    }
+    dl.docutils dt {
+      font-weight: bold;
+      margin-top:30px;
+    }
+    blockquote div.highlight pre, pre{
+        background-color: #F6F6F6;
+        box-shadow: 2px 2px 4px #EEE;
+    }
+
+    div.footer {
+      border-top: 6px solid #00c4e0ff;
+      background-color: #494a4d;
+      color: #FFF;
+      margin-top: 0;
+      padding-top: 20px;
+      margin-bottom: 0;
+      padding-bottom: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+      box-shadow: 10px 0px 19px #EEE
+
+    }
+    div.footer a {
+      color: #4FD3E7;
+      text-decoration: none;
+      border:0;
+    }
+    div.sphinxsidebar #searchbox {
+      padding-bottom: 30px;
+    }
+    div.sphinxsidebar #searchbox input[type="text"] {
+      font-family: 'Open Sans', sans-serif !important;
+      width: 100%;
+      height: 26px;
+    }
+    div.sphinxsidebar #searchbox input[type="submit"] {
+      font-family: 'Open Sans', sans-serif !important;
+      background: #00c4e0;
+      color: #fff;
+      height: 30px;
+      border-color:#00c4e0;
+      margin-left:10px;
+    }
+
+    div.sphinxsidebar form > div {
+      display: inline-block;
+    }
+  </style>
+
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/shopinvader-logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">What is Shopinvader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../store_config/index.html">Store configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/index.html">Backend</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Frontend</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Store components</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="addresses.html">Addresses</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Cart</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">Attributes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#cart-header">Cart header</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#amout">Amout</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#shipping">Shipping</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#invoicing">Invoicing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#actions">Actions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#checkout-step-process">Checkout step process</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#select-shipping-and-billing-address">Select Shipping and billing address</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#select-shipping-method">Select shipping method</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#select-payment-method">Select payment method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cart-lines">Cart lines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Actions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#add-product-to-cart">Add product to cart</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#update-quantity">Update quantity</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#remove-product-to-cart">Remove product to cart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="categories.html">Categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customer.html">Customer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="products.html">Products</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#getting-started">Getting Started</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Frontend</a><ul>
+  <li><a href="index.html">Store components</a><ul>
+      <li>Previous: <a href="addresses.html" title="previous chapter">Addresses</a></li>
+      <li>Next: <a href="categories.html" title="next chapter">Categories</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cart">
+<h1>Cart<a class="headerlink" href="#cart" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">store.cart</span></code> provides you the current cart. This variable is only available
+after the add to cart action. <code class="docutils literal notranslate"><span class="pre">store.cart</span></code> allow cart lines with product data,
+shipping address, delivery mode, Cart is stored and managed directly via odoo.
+To avoid performance problems, cart data are cached, each cart updating
+(add new product, set a shipping address…) refresh cached datas via an Odoo
+API call.</p>
+<p>Each cart update recalculate grand total, subtotal, shipping cost and VAT
+amount automatically.</p>
+<p>To validate a cart you need to have a logged user.</p>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cart-header">
+<h3>Cart header<a class="headerlink" href="#cart-header" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils" id="id4">
+<caption><span class="caption-text">store.cart attributes</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Desciption</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>amount</td>
+<td>Date</td>
+<td>Grand total and taxes, See <a class="reference internal" href="#cart-amount"><span class="std std-ref">Amout</span></a> documentation</td>
+</tr>
+<tr class="row-odd"><td>date</td>
+<td>Date</td>
+<td>The cart creation date</td>
+</tr>
+<tr class="row-even"><td>lines</td>
+<td>Array</td>
+<td>Cart lines See <a class="reference internal" href="#cart-lines"><span class="std std-ref">Cart lines</span></a> documentation</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td>Integer</td>
+<td>Cart ID</td>
+</tr>
+<tr class="row-even"><td>invoicing</td>
+<td>Object</td>
+<td>Invoice address, see <a class="reference internal" href="#cart-invoicing"><span class="std std-ref">Invoicing</span></a> doc</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>String</td>
+<td>Cart reference</td>
+</tr>
+<tr class="row-even"><td>payment</td>
+<td>Object</td>
+<td>Payment method selected, see <a class="reference internal" href="#cart-payment-method"><span class="std std-ref">Select payment method</span></a> doc</td>
+</tr>
+<tr class="row-odd"><td>shipping</td>
+<td>Object</td>
+<td>Shipping address, see <a class="reference internal" href="#cart-shipping"><span class="std std-ref">Shipping</span></a> doc</td>
+</tr>
+<tr class="row-even"><td>state</td>
+<td>String</td>
+<td>Odoo sale order status</td>
+</tr>
+<tr class="row-odd"><td>step</td>
+<td>String</td>
+<td>Cart Step list, see <a class="reference internal" href="#cart-checkout"><span class="std std-ref">Checkout step process</span></a> doc</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="amout">
+<span id="cart-amount"></span><h4>Amout<a class="headerlink" href="#amout" title="Permalink to this headline">¶</a></h4>
+<p>Amout object provide cart Grand total and taxes amount</p>
+<table border="1" class="colwidths-given docutils" id="id5">
+<caption><span class="caption-text">store.cart.amount</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Desciption</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>tax</td>
+<td>Float</td>
+<td>VAT grand total (Item and shipping cost included)</td>
+</tr>
+<tr class="row-odd"><td>total</td>
+<td>Float</td>
+<td>Grand total (included taxes)</td>
+</tr>
+<tr class="row-even"><td>untaxed</td>
+<td>Float</td>
+<td>Total amount without taxes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="shipping">
+<span id="cart-shipping"></span><h4>Shipping<a class="headerlink" href="#shipping" title="Permalink to this headline">¶</a></h4>
+<p>Shipping object provide shipping customer address, selected carrier and shipping
+cost.</p>
+<table border="1" class="colwidths-given docutils" id="id6">
+<caption><span class="caption-text">store.cart amount</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Desciption</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>address</td>
+<td>Object</td>
+<td>Shipping address</td>
+</tr>
+<tr class="row-odd"><td>amount.tax</td>
+<td>Float</td>
+<td>Shipping cost’s tax</td>
+</tr>
+<tr class="row-even"><td>amount.total</td>
+<td>Float</td>
+<td>Shipping cost taxes included</td>
+</tr>
+<tr class="row-odd"><td>amount.untaxed</td>
+<td>Float</td>
+<td>Shipping cost without taxes</td>
+</tr>
+<tr class="row-even"><td>carrier</td>
+<td>Float</td>
+<td>Total amount included taxes</td>
+</tr>
+<tr class="row-odd"><td>trackings</td>
+<td>Array</td>
+<td>Parcel tracking URLs, not available for cart.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="invoicing">
+<span id="cart-invoicing"></span><h4>Invoicing<a class="headerlink" href="#invoicing" title="Permalink to this headline">¶</a></h4>
+<p>Shipping object provide invoicing customer address.</p>
+<table border="1" class="colwidths-given docutils" id="id7">
+<caption><span class="caption-text">store.cart amount</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Desciption</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>address</td>
+<td>Object</td>
+<td>invoicing address</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="actions">
+<h2>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h2>
+<p>Some actions are available to manage cart content. Cart actions use html form.
+Each action need form submitting with specific parameters and action attribute
+value.</p>
+<p>Usally, we use hidden input to specify these parameters values.</p>
+<p>You have to use get or post for form method. All actions require
+<code class="docutils literal notranslate"><span class="pre">invader_success_url</span></code> and <code class="docutils literal notranslate"><span class="pre">invader_error_url</span></code> parameters to defined URL page
+use for redirection in case of success or error.</p>
+<p>The action form attribute is use to specify a Shopinvader controller (
+/invader/cart/update, /invader/cart/add_item…)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">POST or GET form method will have the same effect.</p>
+</div>
+<div class="section" id="checkout-step-process">
+<span id="cart-checkout"></span><h3>Checkout step process<a class="headerlink" href="#checkout-step-process" title="Permalink to this headline">¶</a></h3>
+<p>Actually Shopinvader use muli-page checkout.
+To move from one step to the next you need to submit a HTML form with specific
+parameters to indicate the current and the next checkout step.</p>
+<p>This process is necessary  to ensure the cart data viability.</p>
+<p>Usally we recommended these cart steps :</p>
+<blockquote>
+<div><ul class="simple">
+<li>Cart summary</li>
+<li>Customer login</li>
+<li>Select shipping address</li>
+<li>Select Shipping mode and payment</li>
+<li>order summary</li>
+</ul>
+</div></blockquote>
+<p>You have to set up your cart steps into odoo backend configuration.</p>
+<table border="1" class="colwidths-given docutils" id="id8">
+<caption><span class="caption-text">HTML form input</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input name</th>
+<th class="head">Type</th>
+<th class="head">Desciption</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>invader_success_url</td>
+<td>String</td>
+<td>Shopinvader cart controller name</td>
+</tr>
+<tr class="row-odd"><td>invader_error_url</td>
+<td>String</td>
+<td>Method on controller</td>
+</tr>
+<tr class="row-even"><td>current_step</td>
+<td>String</td>
+<td>current step ID</td>
+</tr>
+<tr class="row-odd"><td>next_step</td>
+<td>String</td>
+<td>next step ID</td>
+</tr>
+</tbody>
+</table>
+<p>form submitting on /invader/cart/update may be combined various actions like
+select shipping address, define shipping method in the same time.</p>
+<dl class="docutils">
+<dt>HTML form to go to the next step</dt>
+<dd><div class="first last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/invader/cart/update&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_success_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL success page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_error_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL error page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;current_step&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;cart_index&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;next_step&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;cart_login&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Update address&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="select-shipping-and-billing-address">
+<span id="cart-address"></span><h3>Select Shipping and billing address<a class="headerlink" href="#select-shipping-and-billing-address" title="Permalink to this headline">¶</a></h3>
+<p>In your cart a customer can enter two addresses: billing address or shipping
+address.</p>
+<p>shipping and billing address are an item of <code class="docutils literal notranslate"><span class="pre">store.addresses</span></code>. <code class="docutils literal notranslate"><span class="pre">store.addresses</span></code>
+collection (<a class="reference internal" href="addresses.html#addresses"><span class="std std-ref">see store.addresses documentation</span></a>).</p>
+<p><em>Controller</em> /invader/cart/update</p>
+<table border="1" class="colwidths-given docutils" id="id9">
+<caption><span class="caption-text">HTML form input</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input name</th>
+<th class="head">Type</th>
+<th class="head">Desciption</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>invader_success_url</td>
+<td>String</td>
+<td>Shopinvader cart controller name</td>
+</tr>
+<tr class="row-odd"><td>invader_error_url</td>
+<td>String</td>
+<td>Method on controller</td>
+</tr>
+<tr class="row-even"><td>partner_shipping</td>
+<td>integer</td>
+<td>Address ID, address list provided by <code class="docutils literal notranslate"><span class="pre">store.addresses</span></code></td>
+</tr>
+<tr class="row-odd"><td>partner_invoice</td>
+<td>integer</td>
+<td>Address ID, address list provided by <code class="docutils literal notranslate"><span class="pre">store.addresses</span></code></td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>HTML form to choose shipping</dt>
+<dd><div class="first last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/invader/cart/update&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_success_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL success page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_error_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL error page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Select shipping address<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    {% with_scope  address_type: &quot;address&quot; %}
+      {% for address in store.addresses %}
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;partner_shipping&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{address.id}}&quot;</span><span class="p">/&gt;</span>
+          {{address.display_name}}
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      {% endfor %}
+    {% endwith_scope %}
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Select billing address<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    {% with_scope  address_type: &quot;address&quot; %}
+      {% for address in store.addresses %}
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;partner_invoice&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{address.id}}&quot;</span><span class="p">/&gt;</span>
+          {{address.display_name}}
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      {% endfor %}
+    {% endwith_scope %}
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Update&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="select-shipping-method">
+<span id="cart-shipping-method"></span><h3>Select shipping method<a class="headerlink" href="#select-shipping-method" title="Permalink to this headline">¶</a></h3>
+<p><em>Controller</em> /invader/cart/update</p>
+<table border="1" class="colwidths-given docutils" id="id10">
+<caption><span class="caption-text">HTML form input</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input name</th>
+<th class="head">Type</th>
+<th class="head">Desciption</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>invader_success_url</td>
+<td>String</td>
+<td>Shopinvader cart controller name</td>
+</tr>
+<tr class="row-odd"><td>invader_error_url</td>
+<td>String</td>
+<td>Method on controller</td>
+</tr>
+<tr class="row-even"><td>partner_shipping</td>
+<td>integer</td>
+<td>Address ID, address list provided by <code class="docutils literal notranslate"><span class="pre">store.addresses</span></code></td>
+</tr>
+<tr class="row-odd"><td>partner_invoice</td>
+<td>integer</td>
+<td>Address ID, address list provided by <code class="docutils literal notranslate"><span class="pre">store.addresses</span></code></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">store.cart.available_carriers</span></code> provide carrier list.</p>
+<dl class="docutils">
+<dt>HTML form to go to the next step</dt>
+<dd><div class="first last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/invader/cart/update&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_success_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL success page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_error_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL error page&gt;&quot;</span> <span class="p">/&gt;</span>
+
+  {%for carrier in store.cart.available_carriers%}
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;carrier&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{carrier.id}}&quot;</span><span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>{{carrier.name}}<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  {% endfor %}
+
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Select carrier&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="select-payment-method">
+<span id="cart-payment-method"></span><h3>Select payment method<a class="headerlink" href="#select-payment-method" title="Permalink to this headline">¶</a></h3>
+<p><em>Controller</em> /invader/cart/update</p>
+<p><code class="docutils literal notranslate"><span class="pre">store.cart.available_payment_method</span></code> provide carrier list.</p>
+<dl class="docutils">
+<dt>HTML form to go to the next step</dt>
+<dd><div class="first last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/invader/cart/update&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_success_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL success page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_error_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL error page&gt;&quot;</span> <span class="p">/&gt;</span>
+
+  {%for payment_method in store.cart.available_payment_method%}
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;payment_method&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{payment_method.id}}&quot;</span><span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>{{payment_method.name}}<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  {% endfor %}
+
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Select payment method&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="cart-lines">
+<span id="id1"></span><h1>Cart lines<a class="headerlink" href="#cart-lines" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Attributes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>A line represents a single line in the shopping cart.
+This object can be accessed in all Liquid templates via <code class="docutils literal notranslate"><span class="pre">store.cart.lines.items</span></code>.
+There is one cart line for each product variant added to the shopping cart.</p>
+<p>Cart and cart lines are stored directly in odoo.</p>
+<p>This object has the following attributes:</p>
+<table border="1" class="colwidths-given docutils" id="id11">
+<caption><span class="caption-text">store.cart.order_line attributes</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Desciption</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>count</td>
+<td>Integer</td>
+<td>Number of items in cart</td>
+</tr>
+<tr class="row-odd"><td>amount</td>
+<td>Object</td>
+<td>subtotal of all products added to cart</td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td>Object</td>
+<td>Collection of lines</td>
+</tr>
+</tbody>
+</table>
+<p><em>Cart line json</em></p>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;order_line&quot;</span><span class="p">:[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;product&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;images&quot;</span><span class="p">:[</span>
+          <span class="p">{</span><span class="nt">&quot;small&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;URL image&gt;&quot;</span> <span class="p">,</span><span class="nt">&quot;large&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;URL image&gt;&quot;</span><span class="p">,</span><span class="nt">&quot;medium&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;URL image&gt;&quot;</span><span class="p">,</span><span class="nt">&quot;original&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;URL image&gt;&quot;</span><span class="p">},</span>
+          <span class="p">{</span><span class="nt">&quot;small&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;URL image&gt;&quot;</span> <span class="p">,</span><span class="nt">&quot;large&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;URL image&gt;&quot;</span><span class="p">,</span><span class="nt">&quot;medium&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;URL image&gt;&quot;</span><span class="p">,</span><span class="nt">&quot;original&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;URL image&gt;&quot;</span><span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;default_code&quot;</span><span class="p">:</span><span class="s2">&quot;SKUPRODUCT&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;url_key&quot;</span><span class="p">:</span><span class="s2">&quot;my-product-url&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Great product&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">208</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;price_unit&quot;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span>
+      <span class="nt">&quot;product_uom_qty&quot;</span><span class="p">:</span><span class="mf">2.0</span><span class="p">,</span>
+      <span class="nt">&quot;price_subtotal&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
+      <span class="nt">&quot;discount&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;price_subtotal_gross&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span>
+      <span class="nt">&quot;is_delivery&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3008</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><em>Display lines in template</em></p>
+<blockquote>
+<div><div class="highlight-liquid notranslate"><div class="highlight"><pre><span></span>&lt;table&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>line<span class="w"> </span>in<span class="w"> </span>store.cart.lines<span class="w"> </span><span class="p">%}</span>
+  &lt;tr&gt;
+    &lt;td&gt;<span class="p">{{</span><span class="nv">line</span><span class="p">.</span><span class="nv">product</span><span class="p">.</span><span class="nv">name</span><span class="p">}}</span>&lt;/td&gt;
+    &lt;td&gt;<span class="p">{{</span><span class="nv">line</span><span class="p">.</span><span class="nv">product_uom_qty</span><span class="p">}}</span>&lt;/td&gt;
+    &lt;td&gt;<span class="p">{{</span><span class="nv">line</span><span class="p">.</span><span class="nv">price_subtotal</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">money}}&lt;/td&gt;</span><span class="w"></span>
+<span class="w">  </span>&lt;/tr&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/table&gt;
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>Actions<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="add-product-to-cart">
+<h3>Add product to cart<a class="headerlink" href="#add-product-to-cart" title="Permalink to this headline">¶</a></h3>
+<p><em>Controller</em> /invader/cart/add_item</p>
+<table border="1" class="colwidths-given docutils" id="id12">
+<caption><span class="caption-text">HTML form input</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input name</th>
+<th class="head">Value</th>
+<th class="head">Desciption</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>invader_success_url</td>
+<td>string</td>
+<td>URL in case of success</td>
+</tr>
+<tr class="row-odd"><td>invader_error_url</td>
+<td>string</td>
+<td>URL in case of error</td>
+</tr>
+<tr class="row-even"><td>product_id</td>
+<td>integer</td>
+<td><code class="docutils literal notranslate"><span class="pre">ObjectID</span></code> of product added to cart</td>
+</tr>
+<tr class="row-odd"><td>item_qty</td>
+<td>integer</td>
+<td>Product quantity added to cart</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>HTML form to add product in cart</dt>
+<dd><div class="first last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/invader/cart/add_item&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_success_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL success page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_error_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL error page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;product_id&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;product.ObjectID&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;item_qty&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span>  <span class="na">step</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;10&quot;</span><span class="p">/&gt;</span>
+  ...
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Add product&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="update-quantity">
+<h3>Update quantity<a class="headerlink" href="#update-quantity" title="Permalink to this headline">¶</a></h3>
+<p>This action is usally used in cart item list.</p>
+<p><em>Controller</em> /invader/cart/update_item</p>
+<table border="1" class="colwidths-given docutils" id="id13">
+<caption><span class="caption-text">HTML form input</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input name</th>
+<th class="head">Value</th>
+<th class="head">Desciption</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>invader_success_url</td>
+<td>string</td>
+<td>URL in case of success</td>
+</tr>
+<tr class="row-odd"><td>invader_error_url</td>
+<td>string</td>
+<td>URL in case of error</td>
+</tr>
+<tr class="row-even"><td>item_id</td>
+<td>integer</td>
+<td>cart line ID</td>
+</tr>
+<tr class="row-odd"><td>item_qty</td>
+<td>integer</td>
+<td>New product quantity</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>HTML form to change product quantity</dt>
+<dd><div class="first last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/invader/cart/update_item&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_success_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL success page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_error_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL error page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;item_id&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;Cart line ID&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;item_qty&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span>  <span class="na">step</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;10&quot;</span><span class="p">/&gt;</span>
+  ...
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Change quantity&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="remove-product-to-cart">
+<h3>Remove product to cart<a class="headerlink" href="#remove-product-to-cart" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils" id="id14">
+<caption><span class="caption-text">HTML form input</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input name</th>
+<th class="head">Value</th>
+<th class="head">Desciption</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>invader_success_url</td>
+<td>string</td>
+<td>URL in case of success</td>
+</tr>
+<tr class="row-odd"><td>invader_error_url</td>
+<td>string</td>
+<td>URL in case of error</td>
+</tr>
+<tr class="row-even"><td>item_id</td>
+<td>integer</td>
+<td>cart line ID</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>HTML form to remove cart line</dt>
+<dd><div class="first last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/invader/cart/delete_item&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_success_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL success page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;invader_error_url&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;URL error page&gt;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;item_id&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;Cart line ID&gt;&quot;</span> <span class="p">/&gt;</span>
+  ...
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Remove line&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018,Akretion.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../_sources/frontend/components/cart.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-72717357-6']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>
