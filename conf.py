@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Shopinvader'
+project = u'ShopInvader'
 copyright = u'2018,Akretion'
 author = u'Akretion'
 
@@ -94,7 +94,7 @@ html_sidebars = {
     ]
 }
 html_theme_options = {
-
+    'logo': 'shopinvader-logo.png',
     'sidebar_includehidden': False,
     'fixed_sidebar': True,
     'page_width': '1200px',
